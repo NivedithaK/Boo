@@ -14,18 +14,18 @@ document.body.innerHTML += '<div id="unslack"></div>';
 var unslack = document.getElementById("unslack");
 
 unslack.style.position      = "fixed";
-unslack.style.zIndex        = 2147483647;
+unslack.style.zIndex        = -2147483647;
 unslack.style.left          = "0px";
 unslack.style.top           = "0px";
 unslack.style.width         = "100%";
 unslack.style.height        = "100%";
-unslack.style.opacity       = 0.9;
+unslack.style.opacity       = 0;
 unslack.style.background    = "#000";
 
 var delayMin = 5000;
 var delayMax = 10000;
 
-var pictures = ['https://i.imgur.com/LzMCJZy.jpg',
+var pictures = ['https://i.pinimg.com/originals/2d/0a/6b/2d0a6b931ba21705c8cd83df8e545f21.gif',
                 'http://www.scaryforkids.com/pics/scary-pictures.jpg',
                 'https://i.ytimg.com/vi/Z8l7yU_eZd8/maxresdefault.jpg',
                 'http://assets1.ignimgs.com/2017/08/16/it-11951r-1502893105886_1280w.jpg',
@@ -33,12 +33,14 @@ var pictures = ['https://i.imgur.com/LzMCJZy.jpg',
 
 var picture = pictures[Math.floor(pictures.length * Math.random())];
 
-setTimeout("delayed()", delayMin + Math.floor((delayMax - delayMin) * Math.random()));
+setTimeout("pop()", delayMin + Math.floor((delayMax - delayMin) * Math.random()));
 
-function delayed() {
-    unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto%">';
+function pop() {
+    unslack.style.zIndex = 2147483647;
+    unslack.style.opacity = 1;
+    unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto">';
     unslack.innerHTML += '<div id="delayedText">';
-    unslack.innerHTML += '<font size=100 face="courier" class="unslackCentre"> BOO!</font>';
-    unslack.innerHTML += '<font size=50 face="courier" class="unslackCentre"> Get back to work. </font>';
+    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 250px; face: monospace; opacity: 0.75" class="unslackCentre">BOO!<br></font>';
+    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 50px; face: monospace; opacity: 0.75" class="unslackCentre"><br><br><br>Get back to work. </font>';
     unslack.innerHTML += '</div>';
 }
