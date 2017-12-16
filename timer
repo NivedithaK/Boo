@@ -1,0 +1,62 @@
+      <!DOCTYPE html>
+      <html>
+      <body>
+
+      <div>
+
+    <label for="minutes">Minutes</label>
+          <select name ="minutes" id="select1">
+            <option selected="selected">0</option>
+            <option>5</option>
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>25</option>
+          <option>30</option>
+          <option>35</option>
+          <option>40</option>
+          <option>45</option>
+          <option>50</option>
+          <option>55</option>
+          </select>
+
+
+          <br/>
+          <button onClick="GetSelectedItem('select1');">Set Timer</button>
+
+        <style>
+      p {
+        text-align: center;
+        font-size: 20px;
+      }
+      </style>
+
+      <p> Time Left: <span id="countdowntimer"> 00 </span> seconds</p>
+      </div>
+
+    <script>
+    function GetSelectedItem(el)
+    {
+        var e = document.getElementById(el);
+        var strSel = "The Value is: " + 					e.options[e.selectedIndex].value;
+        
+        var FIRSTTHING = e.options[e.selectedIndex].value
+        
+        var timeleft = parseInt(FIRSTTHING);
+        timeleft = FIRSTTHING * 60;
+          var countdownTimer = setInterval(function(){
+          timeleft--;
+          var minutes = Math.round(timeleft/60) -1;
+          document.getElementById("countdowntimer").textContent = minutes + " minutes and " + (timeleft%60) + " ";
+          if(timeleft <= 0)
+              clearInterval(countdownTimer);
+          },1000);
+}
+
+
+      </script>
+
+
+
+      </body>
+      </html>
