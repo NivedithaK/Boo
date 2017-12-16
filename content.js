@@ -36,6 +36,7 @@ setTimeout("delayedText()", delay);
 
 function delayedText() {
     unslack.innerHTML += '<div id="delayedText">';
-    unslack.innerHTML += '<font color="orange" size=60 face="courier" class="unslackCentre"> BOO! Get back to work. </font>';
+    unslack.innerHTML += '<font size=100 face="courier" class="unslackCentre"> BOO!</font>';
+    unslack.innerHTML += '<font size=50 face="courier" class="unslackCentre"> Get back to work. </font>';
     unslack.innerHTML += '</div>';
 }
