@@ -24,8 +24,14 @@ unslack.style.background    = "#000";
 
 var delay = 1000;
 
-unslack.innerHTML += '<img src="http://www.scaryforkids.com/pics/scary-pictures.jpg" class="unslackCentre" width="100%" height="100%" background-size="contain";>';
+var pictures = ['https://i.imgur.com/LzMCJZy.jpg',
+                'http://www.scaryforkids.com/pics/scary-pictures.jpg',
+                'https://i.ytimg.com/vi/Z8l7yU_eZd8/maxresdefault.jpg',
+                'http://assets1.ignimgs.com/2017/08/16/it-11951r-1502893105886_1280w.jpg',
+                'https://i.redd.it/2roptu7kwxhy.gif'];
 
+var picture = pictures[Math.floor(pictures.length * Math.random())];
+unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto%">';
 setTimeout("delayedText()", delay);
 
 function delayedText() {
