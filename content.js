@@ -40,7 +40,7 @@ function pop() {
     unslack.style.opacity = 1;
     unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto">';
     unslack.innerHTML += '<div id="delayedText">';
-    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 250px; face: monospace; opacity: 0.75" class="unslackCentre">BOO!<br></font>';
-    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 50px; face: monospace; opacity: 0.75" class="unslackCentre"><br><br><br>Get back to work. </font>';
+    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 250px; face: monospace; opacity: 0.75" class="unslackCentre">BOO!<br><br><br><br><br><br><br><br><br><br><br></font>';
+    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 50px; face: monospace; opacity: 0.75" class="unslackCentre"><br><br><br><br><br><br>Get back to work.</font>';
     unslack.innerHTML += '</div>';
 }
