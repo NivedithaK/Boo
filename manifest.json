@@ -13,8 +13,8 @@
                         },
     "background":       {
                             "scripts": ["background.js"]
-                        }
-    "permissions": {
+                        },
+    "permissions": [
                         "tabs"
-}
+]
 }
