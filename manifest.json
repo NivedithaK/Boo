@@ -1,6 +1,6 @@
 
 {
-  "name": "Page Redder",
+  "name": "Page Oranger",
   "description": "Make the current page orange",
   "version": "1.0",
   "permissions": [
@@ -14,3 +14,4 @@
     "default_title": "Make this page orange"
   },
   "manifest_version": 1
+}
