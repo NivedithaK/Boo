@@ -39,6 +39,6 @@ function delayed() {
     unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto%">';
     unslack.innerHTML += '<div id="delayedText">';
     unslack.innerHTML += '<font size=100 face="courier" class="unslackCentre"> BOO!</font>';
-    unslack.innerHTML += '<font size=50 face="courier" class="unslackCentre"> Get back to work. </font>';
+    unslack.innerHTML += '<font size=50 face="courier" class="unslackCentre"> <br>Get back to work.</br> </font>';
     unslack.innerHTML += '</div>';
 }
