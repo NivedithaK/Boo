@@ -1,7 +1,9 @@
+
 {
-  "manifest_version": 2,
-  "name": "Unslack",
-  "version": "0.1""permissions": [
+  "name": "Page Redder",
+  "description": "Make the current page orange",
+  "version": "1.0",
+  "permissions": [
     "activeTab"
   ],
   "background": {
@@ -12,4 +14,3 @@
     "default_title": "Make this page orange"
   },
   "manifest_version": 1
-}
