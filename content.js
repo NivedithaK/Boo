@@ -1,14 +1,13 @@
-// content.js
+// content2.js
 
-var style = document.createElement('style');
-style.innerHTML += '.unslackCentre {';
-style.innerHTML += 'position: absolute;';
-style.innerHTML += 'top: 50%;';
-style.innerHTML += 'left: 50%;';
-style.innerHTML += 'transform: translateX(-50%) translateY(-50%);';
-style.innerHTML += 'display: inline-block;}';
-
-document.getElementsByTagName('head')[0].appendChild(style);
+var s = document.createElement('style');
+s.innerHTML += '.unslackCentreMe {';
+s.innerHTML += 'all: initial;';
+s.innerHTML += 'position: absolute;';
+s.innerHTML += 'top: 50%;';
+s.innerHTML += 'left: 50%;';
+s.innerHTML += 'transform: translateX(-50%) translateY(-50%);}';
+document.getElementsByTagName('head')[0].appendChild(s);
 
 document.body.innerHTML += '<div id="unslack"></div>';
 var unslack = document.getElementById("unslack");
@@ -38,9 +37,10 @@ setTimeout("pop()", delayMin + Math.floor((delayMax - delayMin) * Math.random())
 function pop() {
     unslack.style.zIndex = 2147483647;
     unslack.style.opacity = 1;
-    unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto">';
-    unslack.innerHTML += '<div id="delayedText">';
-    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 250px; face: monospace; opacity: 0.75" class="unslackCentre">BOO!<br><br><br><br><br><br><br><br><br><br><br></font>';
-    unslack.innerHTML += '<font style="color: #FFFFFF; font-size: 50px; face: monospace; opacity: 0.75" class="unslackCentre"><br><br><br><br><br><br>Get back to work.</font>';
-    unslack.innerHTML += '</div>';
+    unslack.innerHTML += '<img src="' + picture + '" class="unslackCentreMe" style="width: 100%; height: auto;"">';
+    unslack.innerHTML += '<div class="unslackCentreMe" style="font: 192px helvetica, sans-serif; color: white; opacity: 0.75; text-align: center;">BOO!</div>';
+    unslack.innerHTML += '<div class="unslackCentreMe" style="font: 24px helvetica, sans-serif; color: white; opacity: 0.75; text-align: center;"><br><br><br><br>   <br><br><br>Get back to work. Click to close.</div>';
+    unslack.addEventListener('click', function(event) {
+        close();
+    });
 }
