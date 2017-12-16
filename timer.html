@@ -28,7 +28,8 @@
                 </select>
             <br>
 
-            <button onClick="GetSelectedItem('select');">Set Timer</button>
+            <button onClick="getSelectedItem('select');">Set Timer</button>
+            <button onClick="stop();">Stop</button>
 
             <p> Time Left: <span id="countdowntimer"> 0 minutes and 0 </span> seconds</p>
         </div>
@@ -47,9 +48,15 @@
                 }
             }, 1000);
 
-            function GetSelectedItem(name) {
+            function getSelectedItem(name) {
                 timeleft = parseInt(e.options[e.selectedIndex].value) * 60;
                 minutes = Math.floor(timeleft / 60);
+                document.getElementById("countdowntimer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
+            }
+
+            function stop() {
+                timeleft = 0;
+                minutes = 0;
                 document.getElementById("countdowntimer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
             }
         </script>

@@ -1,6 +1,4 @@
-// content2.js
-
-
+// content.js
 
 <p id="demo"></p>
 
@@ -9,20 +7,17 @@
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url; });
     var n = url.search("youtube");
-    
+
     if (n == -1)
     {
     document.getElementById("demo").innerHTML = " IT WASN'T IN IT!";
     }
     else
     {
-    
+
     }
 
 </script>
-
-
-
 
 var s = document.createElement('style');
 s.innerHTML += '.unslackCentreMe {';
