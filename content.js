@@ -22,7 +22,8 @@ unslack.style.height        = "100%";
 unslack.style.opacity       = 0.9;
 unslack.style.background    = "#000";
 
-var delay = 1000;
+var delayMin = 5000;
+var delayMax = 10000;
 
 var pictures = ['https://i.imgur.com/LzMCJZy.jpg',
                 'http://www.scaryforkids.com/pics/scary-pictures.jpg',
@@ -31,10 +32,11 @@ var pictures = ['https://i.imgur.com/LzMCJZy.jpg',
                 'https://i.redd.it/2roptu7kwxhy.gif'];
 
 var picture = pictures[Math.floor(pictures.length * Math.random())];
-unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto%">';
-setTimeout("delayedText()", delay);
 
-function delayedText() {
+setTimeout("delayed()", delayMin + Math.floor((delayMax - delayMin) * Math.random()));
+
+function delayed() {
+    unslack.innerHTML += '<img src="' + picture + '" class="unslackCentre" width="100%" height="auto%">';
     unslack.innerHTML += '<div id="delayedText">';
     unslack.innerHTML += '<font color="orange" size=60 face="courier" class="unslackCentre"> BOO! Get back to work. </font>';
     unslack.innerHTML += '</div>';
