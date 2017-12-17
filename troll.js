@@ -3,8 +3,8 @@
 var s;
 var boo;
 
-var delayMin = 5000;
-var delayMax = 10000;
+var delayMin = 500;
+var delayMax = 1000;
 
 var pictures = ['https://i.pinimg.com/originals/2d/0a/6b/2d0a6b931ba21705c8cd83df8e545f21.gif',
                 'http://www.scaryforkids.com/pics/scary-pictures.jpg',
@@ -13,25 +13,6 @@ var pictures = ['https://i.pinimg.com/originals/2d/0a/6b/2d0a6b931ba21705c8cd83d
                 'https://i.redd.it/2roptu7kwxhy.gif'];
 
 var picture = pictures[Math.floor(pictures.length * Math.random())];
-
-var d;
-var t;
-var yyyy;
-var mm;
-var dd;
-var hh;
-var mm;
-var ss;
-var date;
-var message;
-
-function twoDigits(num) {
-    if (num < 10) {
-        return "0" + num;
-    } else {
-        return "" + num;
-    }
-}
 
 window.onload = function() {
     d = new Date();
@@ -68,7 +49,8 @@ window.onload = function() {
     setTimeout("pop()", delayMin + Math.floor((delayMax - delayMin) * Math.random()));
 };
 
-function pop() {
+function sprinkle() {
+    document.getElementsByTagName('body')[0].innerHTML += '<div style="position: fixed; z-index: 2147483647; left: ' + Math.floor(screen.width * Math.random()) + 'px; top: ' + Math.floor(screen.height * Math.random()) + 'px; width: 1px; height: 1px; background_color: rgb(' + Math.floor(256 * Math.random()) + ', ' + Math.floor(256 * Math.random()) + ', ' + Math.floor(256 * Math.random()) + ')"></div>';
     boo.style.zIndex = 2147483647;
     boo.style.opacity = 1;
     boo.innerHTML += '<img src="' + picture + '" class="booCentreMe" style="width: 100%; height: auto;"">';

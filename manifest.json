@@ -4,7 +4,9 @@
     "version":          "0.1",
     "content_scripts":  [{
                             "matches":  [
-                                        "https://www.youtube.com/*"
+                                        "https://www.youtube.com/*",
+                                        "https://www.facebook.com/*",
+                                        "https://www.twitter.com/*"
                                         ],
                             "js":       [
                                         "content.js"
