@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Set Time</title>
+
+        <script src="content.js"></script>
+
         <style>
             p   {
                     text-align: center;
@@ -31,7 +35,7 @@
             <button onClick="getSelectedItem('select');">Set Timer</button>
             <button onClick="stop();">Stop</button>
 
-            <p> Time Left: <span id="countdowntimer"> 0 minutes and 0 </span> seconds</p>
+            <p> Time Left: <span id="timer"> 0 minutes and 0 </span> seconds</p>
         </div>
     </body>
 
@@ -40,9 +44,9 @@
             var e = document.getElementById('select');
             var timeleft = 0;
             var minutes = 0;
-            var countdownTimer = setInterval(function() {
+            var timer = setInterval(function() {
                 minutes = Math.floor(timeleft / 60);
-                document.getElementById("countdowntimer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
+                document.getElementById("timer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
                 if (timeleft > 0) {
                     timeleft --;
                 }
@@ -51,13 +55,18 @@
             function getSelectedItem(name) {
                 timeleft = parseInt(e.options[e.selectedIndex].value) * 60;
                 minutes = Math.floor(timeleft / 60);
-                document.getElementById("countdowntimer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
+                document.getElementById("timer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
+
+                chrome.storage.sync.set({'endTime': timeleft * 1000 + Date.now}, function() {
+                    // Notify that we saved.
+                    message('Settings saved');
+                });
             }
 
             function stop() {
                 timeleft = 0;
                 minutes = 0;
-                document.getElementById("countdowntimer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
+                document.getElementById("timer").textContent = minutes + " minutes and " + (timeleft % 60) + " ";
             }
         </script>
     <foot>
